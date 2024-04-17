@@ -3,8 +3,6 @@ const TelegramApi = require("node-telegram-bot-api");
 
 const bot = new TelegramApi(process.env.API_KEY_BOT, { polling: true });
 
-console.log("ntcn");
-
 bot.on("message", async (msg) => {
   try {
     const text = msg.text;
@@ -45,7 +43,6 @@ bot.on("message", async (msg) => {
 });
 
 bot.on("callback_query", async (ctx) => {
-  const chatId = ctx.chat?.id;
   try {
     console.log(ctx);
     switch (ctx.data) {
